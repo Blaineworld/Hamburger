@@ -14,17 +14,41 @@
 			significant amount of it. Over time, this may lower
 			performance and degrade the overall user experience.
 			Some people, such as myself, have attempted to create them
-			with only HTML and CSS.
+			with only basic HTML and CSS.
 			Because hamburgers are in such high demand right now
 			on the web, I've released my own tool for creating simple
 			and intuitive hamburgers, along with easy-to-understand
-			examples for you to learn from.
+			examples for you and others to learn from.
 		</p>
 		<hr />
 		<hamburger>
-			<plate></plate>
 			<bun>
-				<patty></patty>
+				<patty shade="dark"></patty>
+			</bun>
+		</hamburger>
+		<hamburger>
+			<bun>
+				<cheese hang="right"></cheese>
+				<patty>
+					<cheese hang="center"></cheese>
+				</patty>
+				<patty>
+					<cheese hang="left"></cheese>
+				</patty>
+			</bun>
+		</hamburger>
+		<hamburger>
+			<bun>
+				<patty shade="rare">
+					<cheese hang="right" melt="cool" color="golden"></cheese>
+				</patty>
+			</bun>
+		</hamburger>
+		<hamburger>
+			<bun>
+				<patty shade="burnt">
+					<cheese melt="hot" color="white"></cheese>
+				</patty>
 			</bun>
 		</hamburger>
 	</body>
