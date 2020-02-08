@@ -1,154 +1,37 @@
 :root {
-	--hamburger-size: 24rem;
+	/* This variable sets sizes for hamburgers. */
+	--girth: 12.5rem;
 }
 
-hamburger {
+hamburger, hamburger * {
+	/* Hamburgers are stacked from the bottom up. */
 	display: inline-flex;
 	flex-direction: column-reverse;
-
-	width: var(--hamburger-size);
+	width: var(--girth);
 }
 
-hamburger bun {
+hamburger * {
+	/* The components aren't inline; the hamburger is! */
 	display: flex;
-	flex-direction: column-reverse;
+}
 
-	width: var(--hamburger-size);
+hamburger bun[half], hamburger bun::after, hamburger bun::before {
+	/* Hamburger bun styles. */
+	content: "";
 
-	position: relative;
+	background-color: wheat;
+	border-radius:  5% / 25%;
+	height: calc(var(--girth) / 9);
 }
 
 hamburger bun::after {
-	content: "";
-
-	background-color: wheat;
-	background-image: radial-gradient(ellipse at top right, #ffffc030, #00002030);
-
-	border-radius: 100% 100% 2.5% 2.5% / 100% 100%;
-
-	display: block;
-	height: calc(var(--hamburger-size) * 0.2);
-	width: var(--hamburger-size);
-
-	position: relative;
+	/* The bottom bun has a different shape. */
+	border-radius: 100% 100% 5% 5% / 100% 100% 25% 25%;
+	height: calc(var(--girth) / 6);
 }
 
 hamburger bun::before {
-	content: "";
-
-	background-color: wheat;
-	background-image: radial-gradient(ellipse at top right, #ffffc030, #00002030);
-
-	border-radius: 2.5% 2.5% 50% 50% / 100% 100%;
-
-	display: block;
-	height: calc(var(--hamburger-size) * 0.075);
-	width: var(--hamburger-size);
-
-	position: relative;
-}
-
-hamburger cheese:nth-child(1n) {
-	--melt-curve: 1.25%;
-	--melt-grow: 1.125;
-
-	background-color: #ffe000;
-	background-image: radial-gradient(ellipse at top right, #fffff030, #20001030);
-
-	border-radius: 7.5% 7.5% 100% 100% / 10% 10% 100% 100%;
-
-	display: block;
-
-	height: calc(var(--hamburger-size) * 0.075 * var(--melt-grow));
-	margin-bottom: calc(var(--hamburger-size) * -0.0625 * var(--melt-grow));
-	width: var(--hamburger-size);
-
-	position: relative;
-}
-
-hamburger cheese[color="golden"] {
-	background-color: #ffc040;
-}
-
-hamburger cheese[color="white"] {
-	background-color: #f8f0e8;
-}
-
-hamburger cheese[color="yellow"] {
-	background-color: #ffe000;
-}
-
-hamburger cheese:nth-child(2n) {
-	border-radius: 7.5% 7.5% var(--melt-curve) 100% / 10% 10% 100% 100%;
-}
-
-hamburger cheese:nth-child(3n) {
-	border-radius: 7.5% 7.5% 100% var(--melt-curve) / 10% 10% 100% 100%;
-}
-
-hamburger cheese[hang="center"] {
-	border-radius: 7.5% 7.5% 100% 100% / 10% 10% 100% 100%;
-}
-
-hamburger cheese[hang="left"] {
-	border-radius: 7.5% 7.5% 100% var(--melt-curve) / 10% 10% 100% 100%;
-}
-
-hamburger cheese[hang="right"] {
-	border-radius: 7.5% 7.5% var(--melt-curve) 100% / 10% 10% 100% 100%;
-}
-
-hamburger cheese[melt="cool"] {
-	--melt-curve: 0.125%;
-	--melt-grow: 1;
-}
-
-hamburger cheese[melt="medium"] {
-	--melt-curve: 1.25%;
-	--melt-grow: 1.125;
-}
-
-hamburger cheese[melt="hot"] {
-	--melt-curve: 3.75%;
-	--melt-grow: 1.25;
-}
-
-hamburger patty {
-	display: flex;
-	flex-direction: column-reverse;
-
-	width: var(--hamburger-size);
-
-	position: relative;
-}
-
-hamburger patty::before {
-	content: "";
-
-	background-color: #603010;
-	background-image: radial-gradient(ellipse at top right, #ffffc040, #00002040);
-
-	border-radius: 5% 5% / 100% 100%;
-
-	display: block;
-	height: calc(var(--hamburger-size) * 0.1);
-	width: var(--hamburger-size);
-
-	position: relative;
-}
-
-hamburger patty[shade="burnt"]::before {
-	background-color: #20180c;
-}
-
-hamburger patty[shade="dark"]::before {
-	background-color: #502408;
-}
-
-hamburger patty[shade="medium"]::before {
-	background-color: #603010;
-}
-
-hamburger patty[shade="rare"]::before {
-	background-color: #a05030;
+	/* The bottom bun has a different shape. */
+	border-radius: 1.25% 1.25% 5% 5% / 25%;
+	height: calc(var(--girth) / 12);
 }
